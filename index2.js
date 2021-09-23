@@ -21,6 +21,10 @@ const printPassTimes = (passTimes) => {
 };
 
 // call
-nextISSTimesForMyLocation().then((passTimes) => {
-  printPassTimes(passTimes);
-});
+nextISSTimesForMyLocation()
+  .then((passTimes) => {
+    printPassTimes(passTimes);
+  })
+  .catch((err) => {
+    console.log("Catastrophic failure with error code: ", err.message);
+  });
